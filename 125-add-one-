@@ -3,28 +3,27 @@ public void plusOne(List<Integer> numbers) {
     lastNum = lastNum;
     List<Integer> res = new List<Integer>();
     Integer carryOver = 1;
-    for(Integer i = lastNum-1; i>0 ;i--){
+    for(Integer i = lastNum-1; i>=0 ;i--){
         Integer curr = (numbers.get(i)) + carryOver;
         if(i == 0){
             if(curr==10){
                 List<Integer> resResized = new List<Integer>();
-                resResized.add(0,1);
-                resResized.set(1,0);
+                resResized.add(1);
+                resResized.add(0);
                 numbers.remove(0);
                 resResized.addAll(numbers);
-                numbers = new List<Integer>(resResized.clone());
-                continue;
+                numbers = resResized.clone();
+                return;
             }
             numbers.set(0,curr);
-            continue;
+            return;
         }
 
         else if(((curr<=9)&& (i>0))){
             numbers.set(i,curr);
             carryOver = 0;
-            continue;
         }
-        else if(((curr>=10) && (i==0))){
+        if(((curr>=10) && (i==0))){
             List<Integer> resResized = new List<Integer>();
             resResized.set(0,1);
             resResized.set(1,0);
@@ -34,6 +33,7 @@ public void plusOne(List<Integer> numbers) {
             continue;
         }
         if((curr>=10)){
+            numbers.set(i,0);
             carryOver = 1;
         }
     }
