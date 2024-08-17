@@ -1,39 +1,25 @@
 public void plusOne(List<Integer> numbers) {
-    Integer lastNum = numbers.size();
-    lastNum = lastNum;
-    Integer carryOver = 1;
-    for(Integer i = lastNum-1; i>=0 ;i--){
-        Integer curr = (numbers.get(i)) + carryOver;
-        if(i == 0){
-            if(curr==10){
-                List<Integer> resResized = new List<Integer>();
-                resResized.add(1);
-                resResized.add(0);
-                numbers.remove(0);
-                resResized.addAll(numbers);
-                numbers = resResized.clone();
-                return;
+    // code here
+    numbers[numbers.size() - 1] = numbers[numbers.size() - 1] + 1;
+        Integer carry = 0;
+        for (Integer i = numbers.size() - 1; i >= 0; i--) {
+            numbers[i] += carry;
+            if (numbers[i] - 10 >= 0) {
+                numbers[i] = numbers[i] - 10;
+                carry = 1;
+            } else {
+                carry = 0;
             }
-            numbers.set(0,curr);
+        }
+        if (carry != 0) {
+            List<Integer> res = new List<Integer>(numbers.size()+1);
+            res[0] = carry;
+            for (Integer i = 1; i < res.size(); i++) {
+                res[i] = numbers[i - 1];
+            }
+            numbers = res;
             return;
         }
-
-        else if(((curr<=9)&& (i>0))){
-            numbers.set(i,curr);
-            carryOver = 0;
-        }
-        // if(((curr>=10) && (i==0))){
-        //     List<Integer> resResized = new List<Integer>();
-        //     resResized.set(0,1);
-        //     resResized.set(1,0);
-        //     numbers.remove(0);
-        //     resResized.addAll(numbers);
-        //     numbers = new List<Integer>(resResized.clone());
-        //     continue;
-        // }
-        else if((curr>=10)){
-            numbers.set(i,0);
-            carryOver = 1;
-        }
-    }
+    return;
 }
+
