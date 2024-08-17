@@ -23,16 +23,16 @@ public void plusOne(List<Integer> numbers) {
             numbers.set(i,curr);
             carryOver = 0;
         }
-        if(((curr>=10) && (i==0))){
-            List<Integer> resResized = new List<Integer>();
-            resResized.set(0,1);
-            resResized.set(1,0);
-            numbers.remove(0);
-            resResized.addAll(numbers);
-            numbers = new List<Integer>(resResized.clone());
-            continue;
-        }
-        if((curr>=10)){
+        // if(((curr>=10) && (i==0))){
+        //     List<Integer> resResized = new List<Integer>();
+        //     resResized.set(0,1);
+        //     resResized.set(1,0);
+        //     numbers.remove(0);
+        //     resResized.addAll(numbers);
+        //     numbers = new List<Integer>(resResized.clone());
+        //     continue;
+        // }
+        else if((curr>=10)){
             numbers.set(i,0);
             carryOver = 1;
         }
