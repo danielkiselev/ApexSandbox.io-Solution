@@ -1,9 +1,9 @@
 public void plusOne(List<Integer> numbers) {
     Integer lastNum = numbers.size();
-    lastNum = lastNum-1;
+    lastNum = lastNum;
     List<Integer> res = new List<Integer>();
     Integer carryOver = 1;
-    for(Integer i = lastNum; i>0 ;i--){
+    for(Integer i = lastNum; i>=0 ;i--){
         Integer curr = (numbers.get(i)) + carryOver;
         if((curr<=9)){
             numbers.set(i,curr);
