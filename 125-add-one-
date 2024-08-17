@@ -14,7 +14,7 @@ public void plusOne(List<Integer> numbers) {
             resResized.set(0,1);
             resResized.set(1,0);
             numbers.remove(0);
-            resResized = resResized.addAll(numbers);
+            resResized.addAll(numbers);
             numbers = resResized.clone();
             break;
         }
