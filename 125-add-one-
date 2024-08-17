@@ -19,7 +19,7 @@ public void plusOne(List<Integer> numbers) {
             numbers = resResized.clone();
             break;
         }
-        else if((curr>=10)){
+        else if((curr>=10)&& (i>1))){
             numbers.set(i,0);
             carryOver = 1;
             continue;
