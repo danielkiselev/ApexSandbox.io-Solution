@@ -12,15 +12,14 @@ public void plusOne(List<Integer> numbers) {
                 resResized.set(1,0);
                 numbers.remove(0);
                 resResized.addAll(numbers);
-                numbers = resResized.clone();
+                numbers = resResized.deepClone();
                 continue;
             }
             numbers.set(0,curr);
             continue;
-            
         }
 
-        if((curr<=9)){
+        else if((curr<=9)){
             numbers.set(i,curr);
             carryOver = 0;
             continue;
@@ -31,7 +30,7 @@ public void plusOne(List<Integer> numbers) {
             resResized.set(1,0);
             numbers.remove(0);
             resResized.addAll(numbers);
-            numbers = resResized.clone();
+            numbers = resResized.deepClone();
             break;
         }
         else if((curr>=10)){
