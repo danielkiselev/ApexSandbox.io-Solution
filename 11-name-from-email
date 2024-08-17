@@ -7,12 +7,12 @@ public String nameFromEmail(String email) {
             fName = email.substring(0,i);
             dot = i;
             fName.toLowerCase();
-            fName.capitilize();
+            fName.capitalize();
         }
         if((email.substring(i,i+1)).equals('@')){
             lastname = email.substring(dot+1,i);
             lastname.toLowerCase();
-            lastname.capitilize();
+            lastname.capitalize();
             break;
         }
 
