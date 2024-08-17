@@ -14,9 +14,9 @@ public void plusOne(List<Integer> numbers) {
             List<Integer> resResized = new List<Integer>();
             resResized.set(0,1);
             resResized.set(1,0);
-            numbers = numbers.remove(0);
+            numbers.remove(0);
             resResized.addAll(numbers);
-            numbers = resResized.deepclone();
+            numbers = resResized
             break;
         }
         else if((curr>=10)){
