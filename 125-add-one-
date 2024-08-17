@@ -19,7 +19,7 @@ public void plusOne(List<Integer> numbers) {
             continue;
         }
 
-        else if((curr<=9)&& (i>0))){
+        else if(((curr<=9)&& (i>0))){
             numbers.set(i,curr);
             carryOver = 0;
             continue;
