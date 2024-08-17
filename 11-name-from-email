@@ -1,18 +1,3 @@
 public String nameFromEmail(String email) {
-   Integer firstname = -1;
-   String lastname = '';
-   String fName = '';
-   Integer size = email.length();
-   for(Integer i = 0; i<size ; i++;){
-       String curr = email.substring(i, i+1);
-       if(curr=='.'){
-           firstname = i;
-           fName = email.substring(0,i);
-       }
-       if(curr == '@'){
-           lastname = email.substring((firstname+1),i);
-           return ((fName.toLowerCase()).capitalize()+' '+(lastname.toLowerCase()).capitalize()).trim();
-       }
-   }
-    return ((fName.toLowerCase()).capitalize()+' '+(lastname.toLowerCase()).capitalize()).trim();
+    //code here
 }
