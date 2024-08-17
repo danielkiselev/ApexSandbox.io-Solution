@@ -1,15 +1,16 @@
 public String nameFromEmail(String email) {
+
     String fName = '';
     String lastname = '';
     Integer dot = 0;
     for(Integer i = 0; i< email.length();i++;){
-        if(email.substring(i,i+1).equals('.')){
+        if((email.substring(i,i+1)).equals('.')){
             fName = email.substring(0,i);
             dot = i;
             fName.toLowerCase();
             fName.capitilize();
         }
-        if(email.substring(i,i+1).equals('@')){
+        if((email.substring(i,i+1)).equals('@')){
             lastname = email.substring(dot+1,i);
             lastname.toLowerCase();
             lastname.capitilize();
