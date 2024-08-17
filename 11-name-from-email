@@ -2,7 +2,7 @@ public String nameFromEmail(String email) {
     String fName = '';
     String lastname = '';
     Integer dot = 0;
-    for(Integer i = 0; i<email.length();i++;){
+    for(Integer i = 0; i<email.length();i++){
         if((email.substring(i,i+1)).equals('.')){
             fName = email.substring(0,i);
             dot = i;
