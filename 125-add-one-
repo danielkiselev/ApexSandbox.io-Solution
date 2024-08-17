@@ -18,5 +18,9 @@ public void plusOne(List<Integer> numbers) {
             numbers = resResized.clone();
             break;
         }
+        if(((curr>=10) && (i>0))){
+            numbers.set(i,0);
+            carryOver = 1;
+        }
     }
 }
