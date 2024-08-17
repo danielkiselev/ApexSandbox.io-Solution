@@ -8,7 +8,7 @@ public void plusOne(List<Integer> numbers) {
         if((curr<=9)){
             numbers.set(i,curr);
             carryOver = 0;
-            break;
+            continue;
         }
         else if(((curr>=10) && (i==0))){
             List<Integer> resResized = new List<Integer>();
