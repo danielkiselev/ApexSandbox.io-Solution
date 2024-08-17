@@ -13,8 +13,10 @@ public void plusOne(List<Integer> numbers) {
             resResized.set(i,1);
             resResized.set(1,0);
             resResized.addAll(res);
-            return resResized;
+            numbers = resResized;
+            return;
         }
     }
-return res;
+    numbers = res;
+
 }
