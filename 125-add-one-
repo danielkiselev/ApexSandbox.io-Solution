@@ -16,6 +16,6 @@ public void plusOne(List<Integer> numbers) {
             numbers = resResized.clone();
         }
     }
-    System.out.println(numbers);
+    System.debug(numbers);
     numbers = res.clone();
 }
