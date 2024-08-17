@@ -6,17 +6,17 @@ public void plusOne(List<Integer> numbers) {
     for(Integer i = lastNum; i>0 ;i--){
         Integer curr = numbers.get(i) + carryOver;
         if((curr<=9)){
-            res.set(i,curr);
+            numbers.set(i,curr);
             carryOver = 0;
         }
         if(((curr>=10) && (i==0))){
             List<Integer> resResized = new List<Integer>();
-            resResized.set(i,1);
+            resResized.set(0,1);
             resResized.set(1,0);
-            resResized.addAll(res);
+            numbers = numbers.remove(0);
+            resResized = resResized.addAll(numbers);
             numbers = resResized.clone();
+            break;
         }
     }
-    System.debug(numbers);
-    numbers = res.clone();
 }
