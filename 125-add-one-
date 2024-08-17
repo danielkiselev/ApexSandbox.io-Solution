@@ -17,7 +17,7 @@ public void plusOne(List<Integer> numbers) {
             for (Integer i = 1; i < res.size(); i++) {
                 res[i] = numbers[i - 1];
             }
-            numbers = res;
+            numbers = res.clone();
             return;
         }
     return;
