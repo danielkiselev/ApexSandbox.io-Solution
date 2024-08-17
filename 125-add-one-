@@ -33,8 +33,7 @@ public void plusOne(List<Integer> numbers) {
             numbers = new List<Integer>(resResized.clone());
             continue;
         }
-        else if((curr>=10)){
-            numbers.set(i,0);
+        if((curr>=10)){
             carryOver = 1;
         }
     }
