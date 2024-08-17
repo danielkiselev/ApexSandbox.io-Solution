@@ -16,7 +16,7 @@ public void plusOne(List<Integer> numbers) {
             resResized.set(1,0);
             numbers.remove(0);
             resResized.addAll(numbers);
-            numbers = resResized
+            numbers = resResized.clone();
             break;
         }
         else if((curr>=10)){
