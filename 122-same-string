@@ -2,10 +2,7 @@ public static Boolean sameString(String str1, String str2){
     String r1 = process(str1);
     String r2 = process(str2);
     
-    if(r1.equals(r2)){
-        return True;
-    }
-    return False;
+    return r1.equals(r2);
     // solution
 }
 
