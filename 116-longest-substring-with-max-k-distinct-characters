@@ -4,7 +4,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
     for (Integer endValue = 0; endValue < (str.length()); endValue++){
         String curr = str.charAt(endValue);
         set1.add(curr);
-        if (set1.size() > k) { 
+        if ((set1.size()) > k) { 
             String currStart = str.charAt(start);
             set1.remove(currStart);
             start++;
