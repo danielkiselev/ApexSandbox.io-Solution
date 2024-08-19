@@ -1,7 +1,7 @@
 public static Integer longestDistinctSubstring(String str, Integer k){ 
     Set<String> set = new Set<String>();
-    int start = 0, max = -1;
-    for (int end = 0; end < str.length(); end++){
+    Integer start = 0, max = -1;
+    for (Integer end = 0; end < str.length(); end++){
       set.add(str.charAt(end));
       if (set.size() > k) { 
         set.remove(str.charAt(start));
