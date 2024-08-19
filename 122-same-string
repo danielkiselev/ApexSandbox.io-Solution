@@ -12,8 +12,8 @@ private String process(String input){
     String res = '';
     for(Integer z = 0; z<input.length(); z++){
         String curr = input.substring(z,z+1);
-        Integer resL = res.length();
         if((curr == '#')){
+            Integer resL = res.length();
             if((resL>0)){
                 res = res.substring(0,resL);
             }
