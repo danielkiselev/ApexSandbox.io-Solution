@@ -16,14 +16,15 @@ public static Integer longestDistinctSubstring(String str, Integer k){
                 if(map1.containsKey(startC)){
                     Integer temp = map1.get(startC);
                     map1.put(startC,temp-1);
-                if(map1.get(startC)==0){
-                    map1.remove(startC);
+                    if(map1.get(startC)==0){
+                        map1.remove(startC);
+                    }
                 }
-                }
-                wstart=wstart+1;
+                wstart+=1;
             }
-            if(map1.size()<=k)
+            if(map1.size()<=k){
               max=Math.max(max,(wend-wstart+1));
+            }
         }
         return max;
 }
