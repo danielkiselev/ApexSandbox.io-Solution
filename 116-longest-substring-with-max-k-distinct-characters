@@ -9,7 +9,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
             Integer value = currHolder.get(curr);
             currHolder.put(curr, value+1);
         }
-        while (currHolder.size() > k) {
+        while ((currHolder.size()) > k) {
                 currHolder.put(str.charAt(leftIndex), currHolder.get(str.charAt(leftIndex)) - 1);
                 if (currHolder.get(str.charAt(leftIndex)) == 0) {
                     currHolder.remove(str.charAt(leftIndex));
@@ -19,5 +19,5 @@ public static Integer longestDistinctSubstring(String str, Integer k){
          maxSize = Math.max(maxSize, right - left + 1);
 
     }
-return maxSize;
+    return maxSize;
 }
