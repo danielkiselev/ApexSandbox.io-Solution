@@ -5,11 +5,21 @@ public static Integer longestDistinctSubstring(String str, Integer k){
         Integer len=str.length();
         Map<String,Integer> map1 = new Map<String,Integer>();
         for(Integer wend=0;wend<len;wend++){
-            map1.put(str.charAt(wend),map1.getOrDefault(str.charAt(wend),0)+1);
+            String endC = str.charAt(wend);
+            Integer tempValue = 1;
+            if(map1.containsKey(endC)){
+                tempValue += map1.get(endC);
+            }
+            map1.put(endC,tempValue);
             while(map1.size()>k){
-                map1.put(str.charAt(wstart),map1.get(str.charAt(wstart))-1);
-                if(map1.get(str.charAt(wstart))==0)
-                   map1.remove(str.charAt(wstart));
+                String startC = str.charAt(wstart);
+                if(map1.containsKey(startC)){
+                    Integer temp = map1.get(startC);
+                    map1.put(startC,temp-1);
+                if(map1.get(startC)==0){
+                    map1.remove(startC);
+                }
+                }
                 wstart=wstart+1;
             }
             if(map1.size()<=k)
