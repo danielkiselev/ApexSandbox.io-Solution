@@ -1,17 +1,33 @@
 public static Integer longestDistinctSubstring(String str, Integer k){ 
-    Set<String> set1 = new Set<String>();
-    Integer start = 0, max = -1;
-    for (Integer endValue = 0; endValue < (str.length()); endValue++){
-        String curr = str.charAt(endValue);
-        set1.add(curr);
-        if ((set1.size()) > k) { 
-            String currStart = str.charAt(start);
-            set1.remove(currStart);
-            start++;
+  Set<String> strSet = new Set<String>();
+
+    List<String> strList = new List<String>();
+
+    Integer maxSize = 0;
+
+    for(String s : str.split('')){
+
+        if(strSet.size() == k && !strSet.contains(s)){
+
+            maxSize = strList.size() > maxSize ? strList.size() : maxSize;
+
+            strSet.clear();
+
+            strList.clear();
+
         }
-       else if ((set1.size()) == k) {
-        max = Math.max(max, (endValue-start + 1));
-      } 
+
+        else{
+
+            strSet.add(s);
+
+            strList.add(s);
+
+        }
+
     }
-    return max;
+
+    maxSize = strList.size() > maxSize ? strList.size() : maxSize;
+
+    return maxSize;
 }
