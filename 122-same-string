@@ -1,7 +1,7 @@
 public static Boolean sameString(String str1, String str2){
     String r1 = process(str1);
     String r2 = process(str2);
-    System.debug(r1);
+    System.log(r1);
     if(r1.equals(r2)){
         return True;
     }
