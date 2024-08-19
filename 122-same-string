@@ -1,0 +1,27 @@
+public static Boolean sameString(String str1, String str2){
+    String r1 = process(str1);
+    String r2 = process(str2);
+    if(r1 == r2){
+        return True;
+    }
+    return False;
+    // solution
+}
+
+private String process(String input){
+    String res = '';
+    for(Integer z = 0; z<input.length(); z++){
+        String curr = input.substring(z,z+1);
+        Integer resL = res.length();
+        if((curr == '#')){
+            if((resL>0)){
+                res = res.substring(0,resL);
+            }
+            continue;
+        }
+        else{
+            res+=curr;
+        }
+    }
+    return res;
+}
