@@ -1,0 +1,23 @@
+public static Integer longestDistinctSubstring(String str, Integer k){ 
+    Integer z = str.length();
+    Integer leftIndex = 0;
+    Integer maxSize = 0;
+    Map<String, Integer> currHolder = new Map<String, Integer>();
+    for(Integer rightIndex=0; rightIndex<z; rightIndex++){
+        String curr = str.substring(rightIndex,rightIndex+1);
+        if(currHolder.containsKey(curr)){
+            Integer value = currHolder.get(curr);
+            currHolder.put(curr, value+1);
+        }
+        while (currHolder.size() > k) {
+                currHolder.put(str.charAt(leftIndex), currHolder.get(str.charAt(leftIndex)) - 1);
+                if (currHolder.get(str.charAt(leftIndex)) == 0) {
+                    currHolder.remove(str.charAt(leftIndex));
+                }
+                leftIndex++;
+            }
+         maxSize = Math.max(maxSize, right - left + 1);
+
+    }
+return maxSize;
+}
