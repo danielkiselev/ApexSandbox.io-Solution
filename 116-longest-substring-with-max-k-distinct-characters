@@ -1,30 +1,19 @@
 public static Integer longestDistinctSubstring(String str, Integer k){ 
-
-        Integer max=0;
-        Integer wstart=0;
-        Integer len=str.length();
-        Map<String,Integer> map1 = new Map<String,Integer>();
-        for(Integer wend=0; wend<len; wend++){
-            String endC = str.charAt(wend);
-            Integer tempValue = 1;
-            if(map1.containsKey(endC)){
-                tempValue += map1.get(endC);
-            }
-            map1.put(endC,tempValue);
-            while(map1.size()>k){
-                String startC = str.charAt(wstart);
-                if(map1.containsKey(startC)){
-                    Integer temp = map1.get(startC);
-                    map1.put(startC,temp-1);
-                    if(map1.get(startC)==0){
-                        map1.remove(startC);
-                    }
+        String s = str;
+        int n = s.length();
+        HashMap<Character,Integer> map = new HashMap<>();
+        int maxLen = 0;
+        for(int i = 0, j = 0; j < n ;j++){
+            map.put(s.charAt(j),map.getOrDefault(s.charAt(j),0)+1);
+            while(map.size() > k){
+                map.put(s.charAt(i),map.get(s.charAt(i))-1);
+                if(map.get(s.charAt(i)) == 0){
+                    map.remove(s.charAt(i));
                 }
-                wstart+=1;
+                i++;
             }
-            if((map1.size())<=k){
-              max=Math.max(max,(wend-wstart+1));
-            }
+            
+            maxLen = Math.max(maxLen,j-i+1);
         }
-        return max;
+        return maxLen;
 }
