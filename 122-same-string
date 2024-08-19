@@ -8,13 +8,14 @@ public static Boolean sameString(String str1, String str2){
 
 public String process(String input){
     String res = '';
-    for(Integer z = 0; z<(input.length();); z++){
+    Integer inputL = input.length();
+    for(Integer z = 0; z<inputL; z++){
         String curr = input.substring(z,z+1);
         if((curr == '#')){
             Integer resL = res.length();
-            if((resL>=0)){
-                res = res.substring(0,resL);
-            }
+            String temp = res.substring(0,resL);
+            res = temp;
+            continue;
         }
         else{
             res+=curr;
