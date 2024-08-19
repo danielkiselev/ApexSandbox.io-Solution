@@ -9,9 +9,9 @@ public static Integer longestDistinctSubstring(String str, Integer k){
             set1.remove(currStart);
             start++;
         }
-       else if (set1.size() == k) {
+       else if ((set1.size()) == k) {
         max = Math.max(max, (endValue-start + 1));
       } 
     }
     return max;
-    }
+}
