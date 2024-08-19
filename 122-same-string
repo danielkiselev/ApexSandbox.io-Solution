@@ -8,7 +8,7 @@ public static Boolean sameString(String str1, String str2){
 
 private String process(String input){
     String res = '';
-    for(Integer z = 0; z<input.length(); z++){
+    for(Integer z = 0; z<(input.length();); z++){
         String curr = input.substring(z,z+1);
         if((curr == '#')){
             Integer resL = res.length();
