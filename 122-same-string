@@ -6,15 +6,19 @@ public static Boolean sameString(String str1, String str2){
     // solution
 }
 
+
 public String process(String input){
+    
     String res = '';
     Integer inputL = input.length();
-    for(Integer z = 0; z<inputL; z++){
+    Integer flag = 0;
+    for(Integer z = inputL-1; z>=0; z--){
         String curr = input.substring(z,z+1);
         if((curr == '#')){
-            Integer resL = res.length();
-            String temp = res.substring(0,resL);
-            res = temp;
+            flag +=1;
+        }
+        else if(flag>0){
+            flag -=1;
             continue;
         }
         else{
