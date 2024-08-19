@@ -4,7 +4,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
         Integer wstart=0;
         Integer len=str.length();
         Map<String,Integer> map1 = new Map<String,Integer>();
-        for(Integer wend=0; wend<len ;wend++){
+        for(Integer wend=0; wend<len; wend++){
             String endC = str.charAt(wend);
             Integer tempValue = 1;
             if(map1.containsKey(endC)){
@@ -22,7 +22,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
                 }
                 wstart+=1;
             }
-            if(map1.size()<=k){
+            if((map1.size())<=k){
               max=Math.max(max,(wend-wstart+1));
             }
         }
