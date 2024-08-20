@@ -1,16 +1,27 @@
 public boolean isAnagram(String s1, String s2) {
     //Code here
-    Integer[] anagram = new Integer[128];
+    Map<String, Integer> anagram = new Map<String, Integer>();
     for(Integer i = 0; i<s1.length();i++){
-        anagram[s1.charAt(i)] +=1;
+        String sub1 = s1.substring(i, i+1);
+        String sub2 = s2.substring(i, i+1);
+        Integer temp1 = 1;
+        Integer temp2 = -1;
+        if(anagram.containsKey(sub1)){
+             temp1+= anagram.get(sub1);
+        }
+        anagram.put(sub1,temp1);
+        if(anagram.containsKey(sub2)){
+             temp2+= anagram.get(sub2);
+        }
+        anagram.put(sub2,temp2);
     }
-    for(Integer i = 0; i<s2.length();i++){
-        anagram[s2.charAt(i)] -=1;
-    }
-    for(Integer i = 0; i<anagram.size();i++){
-        if(anagram[i] != 0){
+    List<Integer> valuesList = new List<Integer>();
+    valuesList = anagram.values();
+    for(Integer entry: valuesList){
+        if(entry != 0){
             return false;
         }
     }
+
     return true;
 }
