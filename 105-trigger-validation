@@ -1,0 +1,15 @@
+public void validateInsert(List<Opportunity> opportunities){
+    String errMess = 'Description should not be empty for Closed Won opportunity.';
+    for(Integer i =0; i<opportunities.size();i++)
+    {
+        Opportunity currOpp = opportunities[i];
+        
+        if(currOpp.StageName =='Closed Won' ){
+           if( (currOpp.Description == null) || (currOpp.Description.length()==0) ){
+               currOpp.Description = errMess;
+               opportunitiesp[i] = currOpp;
+           }
+
+        }
+    }
+}
