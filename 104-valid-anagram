@@ -1,10 +1,10 @@
 public boolean isAnagram(String s1, String s2) {
     //Code here
     Integer[] anagram = new Integer[128];
-    for(Integer i = 0; i<s1.size();i++){
+    for(Integer i = 0; i<s1.length();i++){
         anagram[s1.charAt(i)-'0'] +=1;
     }
-    for(Integer i = 0; i<s2.size();i++){
+    for(Integer i = 0; i<s2.length();i++){
         anagram[s2.charAt(i)-'0'] -=1;
     }
     for(Integer i = 0; i<anagram.size();i++){
