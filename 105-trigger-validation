@@ -6,11 +6,10 @@ public void validateInsert(List<Opportunity> opportunities){
         
         if(currOpp.StageName =='Closed Won' ){
            if( (currOpp.Description == null) || (currOpp.Description.length()==0) ){
-               currOpp.Description = new Description();
-               currOpp.Description = errMess
-               opportunities[i] = currOpp;
-               continue;
+               currOpp.Description.addError(errMess);
+               opportunitiesp[i] = currOpp;
            }
+
         }
     }
 }
