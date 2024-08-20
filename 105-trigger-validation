@@ -7,9 +7,8 @@ public void validateInsert(List<Opportunity> opportunities){
         if(currOpp.StageName =='Closed Won' ){
            if( (currOpp.Description == null) || (currOpp.Description.length()==0) ){
                currOpp.Description.addError(errMess);
-               opportunities[i] = currOpp;
+            //    opportunities[i] = currOpp;
            }
-
         }
     }
 }
