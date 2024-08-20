@@ -1,10 +1,8 @@
 public boolean isAnagram(String s1, String s2) {
-    if(s1 == null){
+    if(s1 == null || s2 == null){
 return false;
     }
-    if(s2 == null){
-        return false;
-    }
+
     Map<String, Integer> anagram = new Map<String, Integer>();
     for(Integer i = 0; i<s1.length();i++){
         String sub1 = s1.substring(i, i+1);
