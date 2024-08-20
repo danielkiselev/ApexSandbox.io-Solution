@@ -1,0 +1,17 @@
+public Boolean isSubSequence(String s1, String s2){
+    Integer checkIndex = 0;
+    for(Integer index = 0; index<s2.length();index++ ){
+        String currGoal = s1.substring(checkIndex,checkIndex+1);
+        String currCheck = s2.substring(index,index+1);
+        if(currCheck == currGoal){
+            checkIndex+=1;
+        }
+        else{
+            continue;
+        }
+        if(checkIndex==s1.length()){
+            return true;
+        }
+    }
+return false;
+}
