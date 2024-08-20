@@ -7,7 +7,7 @@ public static Integer longestDistinctSubstring(String str, Integer k){
 
         for(Integer indexEnd=indexStart;indexEnd<n;indexEnd++){
 
-            String temp = str.charAt(indexEnd);
+            String temp = str.substring(indexEnd, indexEnd+1);
 
             if(!(setOfChars.contains(temp)) && (setOfChars.size() == k)){
                 max = Math.max(max,indexEnd-indexStart);
