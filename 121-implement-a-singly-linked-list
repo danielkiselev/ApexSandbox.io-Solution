@@ -26,7 +26,7 @@ public void addToFront(Integer data) {
    * If there was no tail this would be O(n)
    * @param data Object to be used in Node
    */
-  public void addToBack(Integer data) {
+  public void addToTail(Integer data) {
     Node newNode = new Node(data);
     if (this.head == null) {
       this.head = newNode;
