@@ -1,7 +1,7 @@
 public class LinkedList{
-    Node head;
-    Node tail;
-    Integer size;
+    public Node head;
+    public Node tail;
+    public Integer size;
 
     public LinkedList(){
         this.head = null;
