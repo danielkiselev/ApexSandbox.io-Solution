@@ -8,56 +8,77 @@ public class LinkedList{
     this.tail = null;
     this.size = 0;
     }
-    public void addToFront(Integer value){
-        if(nodeCurr == null){
-            nodeCurr = new Node(value);
-        }
-        else{
-            Node curr = new Node(value);
-            curr.next = nodeCurr;
-            nodeCurr = curr;
-        }
+public void addToFront(Object data) {
+    Node newNode = new Node(data);
+    if (this.head == null) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      //do these in order!!
+      newNode.next = this.head;
+      this.head = newNode;
     }
-    public Integer removeFromFront(){
-        Node temp = nodeCurr.next;
-        Integer res = nodeCurr.data;
-        nodeCurr = temp;
-        return res;
-    }
-    public void addToTail(Integer value){
-        Node temp = nodeCurr;
-        while(temp.next != null){
-            temp = temp.next;
-        }
-        Node n = new Node(value);
-        temp.next = n;
-    }
-    public Integer removeFromTail(){
-        
-        if(nodeCurr.next == null){
-            Integer res = nodeCurr.data;
-            nodeCurr = null;
-            return res;
-        }
-        Node temp = nodeCurr.next;
-        while(temp.next != null){
-            temp = temp.next;
-        }
-        Integer res = temp.data;
-        temp = null;
-        return res;
+    this.size++;
+  }
 
-
+  /**
+   * @description This is a O(1) operation because we have a tail property.
+   * If there was no tail this would be O(n)
+   * @param data Object to be used in Node
+   */
+  public void addToBack(Object data) {
+    Node newNode = new Node(data);
+    if (this.head == null) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
-    public Integer size(){
-        Node temp = nodeCurr;
-        Integer counter = 0;
-        while(temp != null){
-            counter+=1;
-            temp = temp.next;
-        }
-        return counter;
-    }    
+    this.size++;
+  }
+
+  /**
+   * @description This is a O(1) operation. The head pointer is updated  and the old head
+   * is garbage collected
+   * @return data value from head Node
+   */
+  public Object removeFromFront() {
+    if (this.size == 0) {
+      throw new SinglyLinkedListException('The list is empty');
+    }
+    Node remove = this.head;
+    this.head = this.head.next;
+    this.size--;
+    return remove.data;
+  }
+
+  /**
+   * @description This is a O(n) operation. we need to now the value of the node that is previous to the
+   * current tail. We have to iterate over the entire list.
+   * @return Data value from tail Node
+   */
+  public Object removeFromBack() {
+    if (this.size == 0) {
+      throw new SinglyLinkedListException('The list is empty');
+    }
+    if (this.size == 1) {
+      Node temp = this.head;
+      this.head = null;
+      this.size--;
+      return temp.data;
+    }
+    Node current = this.head;
+    Node newTail = null;
+    while (current.next != null) {
+      newTail = current;
+      current = current.next;
+    }
+    this.tail = newTail;
+    tail.next = null;
+    this.size--;
+    return current.data;
+  }
 }
 
 public class Node{
