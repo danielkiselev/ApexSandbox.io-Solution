@@ -21,11 +21,7 @@ public void addToFront(Integer data) {
     this.size++;
   }
 
-  /**
-   * @description This is a O(1) operation because we have a tail property.
-   * If there was no tail this would be O(n)
-   * @param data Object to be used in Node
-   */
+
   public void addToTail(Integer data) {
     Node newNode = new Node(data);
     if (this.head == null) {
@@ -38,11 +34,7 @@ public void addToFront(Integer data) {
     this.size++;
   }
 
-  /**
-   * @description This is a O(1) operation. The head pointer is updated  and the old head
-   * is garbage collected
-   * @return data value from head Node
-   */
+
   public Integer removeFromFront() {
     if (this.size == 0) {
         return null;
@@ -55,11 +47,7 @@ public void addToFront(Integer data) {
   public Integer size() {
     return this.size;
   }
-  /**
-   * @description This is a O(n) operation. we need to now the value of the node that is previous to the
-   * current tail. We have to iterate over the entire list.
-   * @return Data value from tail Node
-   */
+
   public Integer removeFromTail() {
     if (this.size == 0) {
         return null;
@@ -83,10 +71,10 @@ public void addToFront(Integer data) {
   }
 }
 
+
 public class Node{
     Integer data;
     Node next;
-
 
     public Node(Integer value){
         data = value; 
