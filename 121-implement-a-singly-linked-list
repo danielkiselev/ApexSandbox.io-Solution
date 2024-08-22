@@ -1,7 +1,7 @@
 public class LinkedList{
-    Node nodeCurr;
+    Node nodeCurr = null;
     public void addToFront(Integer value){
-        if(nodeCurr == null){
+        if(nodeCurr != null){
             nodeCurr = new Node(value);
         }
         else{
