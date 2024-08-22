@@ -60,7 +60,7 @@ public void addToFront(Integer data) {
    * current tail. We have to iterate over the entire list.
    * @return Data value from tail Node
    */
-  public Integer removeFromBack() {
+  public Integer removeFromTail() {
     if (this.size == 0) {
         return null;
     }
