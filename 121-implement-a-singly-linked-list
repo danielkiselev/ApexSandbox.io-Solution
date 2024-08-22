@@ -52,7 +52,9 @@ public void addToFront(Integer data) {
     this.size--;
     return remove.data;
   }
-
+  public Integer size() {
+    return this.size;
+  }
   /**
    * @description This is a O(n) operation. we need to now the value of the node that is previous to the
    * current tail. We have to iterate over the entire list.
