@@ -22,7 +22,7 @@ public class LinkedList{
             temp = temp.next;
         }
         Node n = new Node(value);
-        temp.next = n
+        temp.next = n;
     }
     public Integer removeFromTail(){
         
