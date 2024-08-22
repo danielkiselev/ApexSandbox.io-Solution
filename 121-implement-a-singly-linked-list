@@ -1,0 +1,63 @@
+public class LinkedList{
+    Node nodeCurr = null;
+    public void addToFront(Integer value){
+        if(nodeCurr == null){
+            nodeCurr = new Node(value);
+        }
+        else{
+            Node curr = new Node(value);
+            curr.next = nodeCurr;
+            nodeCurr = curr;
+        }
+    }
+    public Integer removeFromFront(){
+        Node temp = nodeCurr.next;
+        Integer res = nodeCurr.data;
+        nodeCurr = temp;
+        return res;
+    }
+    public void addToTail(Integer value){
+        Node temp = nodeCurr;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        Node n = new Node(value);
+        temp.next = n
+    }
+    public Integer removeFromTail(){
+        
+        if(nodeCurr.next == null){
+            Integer res = nodeCurr.data;
+            nodeCurr = null;
+            return res;
+        }
+        Node temp = nodeCurr.next;
+        while(temp.next != null){
+            temp = temp.next;
+        }
+        Integer res = temp.data;
+        temp = null;
+        return res;
+
+
+    }
+    public Integer size(){
+        Node temp = nodeCurr;
+        Integer counter = 0;
+        while(temp != null){
+            counter+=1;
+            temp = temp.next;
+        }
+        return counter;
+    }    
+}
+
+public class Node{
+    Integer data;
+    Node next;
+
+
+    public Node(Integer value){
+        data = value;
+    }
+}
