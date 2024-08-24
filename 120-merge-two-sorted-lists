@@ -6,7 +6,7 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
     Integer i2 =0;
     while(counter>0){
         counter--;
-        if(list1.get(i1)<=list2.get(i2)){
+        if((i1<list1.size()) && list1.get(i1)<=list2.get(i2)){
             res.add(list1.get(i1));
             i1+=1;
         }
