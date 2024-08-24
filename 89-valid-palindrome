@@ -1,0 +1,18 @@
+public Boolean isPalindrome(String str){
+    str = str.toLowerCase();
+    String cleanStr = '';
+    for(String s : str){
+        if(s.isAlphanumeric()){
+            cleanStr+=s;
+        }
+        continue;
+    }
+    Integer cleanStrL = cleanStr.length();
+    for(Integer i = 0; i<((cleanStr.length())/2);i++){
+        if(cleanStr.substring(i,i+1) == cleanStr.substring((cleanStrL-1)-i,cleanStrL-i)){
+            continue;
+        }
+        return false;
+    }
+    return true;
+}
