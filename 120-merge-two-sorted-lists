@@ -1,0 +1,19 @@
+public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2){
+    // solution 
+    List<Integer> res = new List<Integer>();
+    Integer counter = (list1.size()+list2.size());
+    Integer i1 =0;
+    Integer i2 =0;
+    while(counter>0){
+        counter--;
+        if(list1.get(i1)<=list2.get(i2)){
+            res.add(list1.get(i1));
+            i1+=1;
+        }
+        else{
+            res.add(list2.get(i2));
+            i2+=1;
+        }
+    }
+    return res;
+}
