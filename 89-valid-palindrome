@@ -1,14 +1,15 @@
 public Boolean isPalindrome(String str){
     str = str.toLowerCase();
     String cleanStr = '';
-    for(String s : str){
+    for(Integer i = 0; i<str.length();i++){
+        String s = str.substring(i, i+1);
         if(s.isAlphanumeric()){
             cleanStr+=s;
         }
         continue;
     }
     Integer cleanStrL = cleanStr.length();
-    for(Integer i = 0; i<((cleanStr.length())/2);i++){
+    for(Integer i = 0; i<((cleanStrL)/2);i++){
         if(cleanStr.substring(i,i+1) == cleanStr.substring((cleanStrL-1)-i,cleanStrL-i)){
             continue;
         }
