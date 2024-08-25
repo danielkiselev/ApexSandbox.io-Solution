@@ -10,7 +10,7 @@ public List<String> commonChars(List<String> strs){
         counter.put(curr, tempCount);
     }
     For(Integer z = 1; z<strs.size(); z++){
-        s = str[z];
+        s = strs[z];
         Map<String, Integer> counterTemp = new Map<String, Integer>();
         For(Integer i = 0; i<s.length(); i++){
             String curr  = s.substring(i, i+1);
