@@ -15,10 +15,13 @@ public List<String> commonChars(List<String> strs){
         For(Integer i = 0; i<s.length(); i++){
             String curr  = s.substring(i, i+1);
             Integer tempCount = 1;
-            if(counterTemp.containsKey(curr) && (counter.containsKey(curr))){
-                tempCount+=counterTemp.get(curr);
+            if(counter.containsKey(curr)){
+                if(counterTemp.containsKey(curr)){
+                    tempCount+=counterTemp.get(curr);
+                }
+                counterTemp.put(curr, tempCount);
             }
-            counterTemp.put(curr, tempCount);
+
         }
         Set<String> kS = counterTemp.keySet();
         List<String> ls = new List<String>(kS);
