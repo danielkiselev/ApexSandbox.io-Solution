@@ -1,7 +1,7 @@
 public string countAndSay(integer N) {
     String s = String.valueOf(N);
     Map<String,Integer> holder = new Map<String,Integer>();
-    for(Integer index=0; index<s.length(); index++){
+    for(Integer index=0; index< s.length(); index++){
         Integer counter = 1;
         String c = s.substring(index, index+1);
         if(holder.containsKey(c)){
