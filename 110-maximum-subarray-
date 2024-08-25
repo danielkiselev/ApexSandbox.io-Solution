@@ -21,5 +21,6 @@ public static Integer maxSubArraySum(List<Integer> nums, Integer target){
         }
 
     }
+    return res;
 //code here 
 }
