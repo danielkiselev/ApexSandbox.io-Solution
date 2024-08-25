@@ -1,0 +1,43 @@
+public List<String> commonChars(List<String> strs){
+    Map<String, Integer> counter = new Map<String, Integer>();
+    String s = str[0];
+    For(Integer i = 0; i<s.length(); i++){
+        String curr  = s.substring(i, i+1);
+        Integer tempCount = 1;
+        if(counter.containsKey(curr)){
+            tempCount+=counter.get(curr);
+        }
+        counter.put(curr, tempCount);
+    }
+    For(Integer k = 1; k<str.size(); k++){
+        s = str[k];
+        Map<String, Integer> counterTemp = new Map<String, Integer>();
+        For(Integer i = 0; i<s.length(); i++){
+            String curr  = s.substring(i, i+1);
+            Integer tempCount = 1;
+            if(counterTemp.containsKey(curr) && (counter.containsKey(curr))){
+                tempCount+=counterTemp.get(curr);
+            }
+            counterTemp.put(curr, tempCount);
+        }
+        Set<String> kS = counterTemp.keySet();
+        List<String> ls = new List<String>(kS);
+        for(String k : ls){
+            Integer oldV = counter.get(k);
+            Integer currV = counterTemp.get(k);
+            counterTemp.put(k, Math.min(oldV, currV));
+        }
+        counter = counterTemp.clone();
+    }
+    Set<String> kS = counter.keySet();
+    List<String> ls = new List<String>(kS);
+    List<String>res = new List<String>();
+        for(String k : ls){
+            Integer freq = counter.get(k);
+            for(Integer i = 0; i<freq; i++){
+                res.add(k);
+            }
+        }
+        return res;
+    //solution here 
+}
