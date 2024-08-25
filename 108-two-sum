@@ -10,5 +10,5 @@ public static List<Integer> twoSum(List<Integer> nums, Integer target) {
         }
         holder.put(target-curr, i);
     }
-    res
+    return res;
 }
