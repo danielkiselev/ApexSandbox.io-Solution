@@ -1,9 +1,9 @@
 public static String reverseWords(String str){
     String word = '';
-    String res='';
+    String res= '';
     for(Integer i = 0; i<str.length(); i++){
         String currC = str.substring(i, i+1);
-        if(currC != ' '){
+        if(currC.isAlpha()){
             word+=currC;
         } 
         else{
