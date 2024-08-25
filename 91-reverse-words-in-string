@@ -3,7 +3,7 @@ public static String reverseWords(String str){
     String res= '';
     for(Integer i = 0; i<str.length(); i++){
         String currC = str.substring(i, i+1);
-        if(currC.isAlpha()){
+        if(!currC.isWhiteSpace()){
             word+=currC;
         } 
         else{
