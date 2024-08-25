@@ -3,20 +3,20 @@ public static Integer longestDistinctSubstring(String str, Integer k){
 
     for(Integer indexStart=0;indexStart<n;indexStart++){
 
-        Set<String> setOfChars = new Set<String>();
+        Set<String> visited = new Set<String>();
 
         for(Integer indexEnd=indexStart;indexEnd<n;indexEnd++){
 
             String temp = str.substring(indexEnd, indexEnd+1);
 
-            if(!(setOfChars.contains(temp)) && (setOfChars.size() == k)){
+            if(!(visited.contains(temp)) && (visited.size() == k)){
                 max = Math.max(max,indexEnd-indexStart);
                 break;
             }
 
             else{
 
-                setOfChars.add(temp);
+                visited.add(temp);
 
             }
 
