@@ -7,13 +7,16 @@ public static String reverseWords(String str){
             word+=currC;
         } 
         else{
-            String temp = word.reverse();
-            res+=temp;
+            for(Integer z =word.length()-1; z>=0; z--){
+                res+=word.substring(z,z+1);
+            }
             res+=currC;
             word = '';
         }
     }
-    res+=word;
+    for(Integer z =word.length()-1; z>=0; z--){
+        res+=word.substring(z,z+1);
+    }
     return res;
  // solution here 
 }
