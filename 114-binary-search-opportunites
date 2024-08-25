@@ -4,18 +4,15 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     while(left<right){
         Integer index = (right-left)/2;
         Opportunity o= opportunities.get(index);
-        if(o.amount<target){
-            left = index;
-
-        }
-        else if(o.amount == target){
+        Integer value = o.amount;
+        if(value == target){
             return index;
         }
-        else if(o.amount>target){
-            right = index-1;
+        else if(value<target){
+            left = index;
         }
         else{
-            return -1;
+            right = index;
         }
     }
     return -1;
