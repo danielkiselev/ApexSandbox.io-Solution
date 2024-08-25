@@ -18,8 +18,8 @@ public string countAndSay(integer N) {
                 freq = 0;
                 while((j < len) && (temp.substring(j, j+1) == prevDigit))
                 {
-                    freq ++;
-                    j ++;
+                    freq++;
+                    j++;
                 }
                 digitString = digitString + (freq) + prevDigit;
             }
