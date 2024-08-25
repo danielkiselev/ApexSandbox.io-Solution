@@ -7,7 +7,7 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
         if(visited[nums[i]] != null){
             List<Integer> res = List<Integer>();
             res.add(i);
-            res.add(visited[nums[i]])
+            res.add(visited[nums[i]]);
             return res;
         }
         Integer temp = target-nums[i];
