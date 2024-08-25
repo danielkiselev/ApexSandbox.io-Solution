@@ -1,4 +1,24 @@
 public string countAndSay(integer N) {
-    String s = String.toString(N);
-    return s;
+    String s = String.valueOf(N);
+    Map<String,Integer> holder = new Map<String,Integer>();
+    for(Integer index=0; index<s.length(); index++){
+        Integer counter = 1;
+        String c = s.substring(index, index+1);
+        if(holder.containsKey(c)){
+            counter+=holder.get(c);
+        }
+        holder.put(c,counter);
+    }
+    Set<String> keys = holder.keySet():
+    List<String> keyList = new List<String> (keys);
+    String res = '';
+    for(String k: keyList){
+        Integer v = holder.get(k);
+        String vString = String.valueOf(v);
+        res+=vString;
+        res+=k;
+
+    }
+    return res;
+    // code here
 }
