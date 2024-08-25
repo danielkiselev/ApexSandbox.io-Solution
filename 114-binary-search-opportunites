@@ -2,7 +2,7 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Integer left =0;
     Integer right = opportunities.size();
     while(left<right){
-        Integer index = Math.floor((right-left)/2);
+        Integer index = (Integer)((right-left)/2);
         Opportunity o= opportunities.get(index);
         Integer value = o.amount;
         if(value == target){
