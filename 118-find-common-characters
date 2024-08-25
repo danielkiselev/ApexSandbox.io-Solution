@@ -27,6 +27,7 @@ public List<String> commonChars(List<String> strs){
             Integer currV = counterTemp.get(k);
             counterTemp.put(k, Math.min(oldV, currV));
         }
+        counter.clear();
         counter = counterTemp.clone();
     }
     Set<String> kS = counter.keySet();
