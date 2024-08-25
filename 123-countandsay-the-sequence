@@ -1,24 +1,29 @@
-public String countAndSay(Integer N) {
-    String s = String.valueOf(N);
-    Map<String,Integer> holder = new Map<String,Integer>();
-    for(Integer index=0; index< s.length(); index++){
-        Integer counter = 1;
-        String c = s.substring(index, index+1);
-        if(holder.containsKey(c)){
-            counter+=holder.get(c);
+public string countAndSay(integer N) {
+        String digitString = '1';
+        if(N == 1)   
+        {
+            return digitString;
         }
-        holder.put(c,counter);
-    }
-    Set<String> keys = holder.keySet():
-    List<String> keyList = new List<String> (keys);
-    String res = '';
-    for(String k: keyList){
-        Integer v = holder.get(k);
-        String vString = String.valueOf(v);
-        res+=vString;
-        res+=k;
-
-    }
-    return res;
-    // code here
+        for(Integer i = 1; i < N; i ++)
+        {
+            String temp = digitString;   
+            digitString = '';
+            Integer j = 0; 
+            String prevDigit = temp.substring(0,1);
+            Integer freq = 1;
+            Integer len = temp.length();
+            while(j < len)
+            {
+                prevDigit = temp.substring(j, j+1);
+                freq = 0;
+                while((j < len) && (temp.substring(j, j+1) == prevDigit))
+                {
+                    freq ++;
+                    j ++;
+                }
+                digitString = digitString + (freq) + prevDigit;
+            }
+        }
+        return digitString;
+        
 }
