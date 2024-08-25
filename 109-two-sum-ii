@@ -1,0 +1,15 @@
+public List<Integer> twoSum(List<Integer> nums, Integer target){
+    Integer [] visited = new Integer [target+1];
+    For(Integer i = nums.length()-1; i>0; i--){
+        if(nums[i]>target){
+            continue;
+        }
+        if(visited[nums[i]] != null){
+            return [i, visited[nums[i]]];
+        }
+        Integer temp = target-nums[i];
+        visited[temp] = i;
+    }
+    return null;
+    //code here
+}
