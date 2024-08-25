@@ -1,0 +1,19 @@
+public static String reverseWords(String str){
+    String word = '';
+    String res='';
+    for(Integer i = 0; i<str.length(); i++){
+        String currC = str.substring(i, i+1);
+        if(currC != ' '){
+            word+=currC;
+        } 
+        else{
+            String temp = word.reverse();
+            res+=temp;
+            res+=currC;
+            word = '';
+        }
+    }
+    res+=word;
+    return res;
+ // solution here 
+}
