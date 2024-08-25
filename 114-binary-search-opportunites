@@ -11,7 +11,7 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
             return index;
         }
         else if(o.amount>target){
-            right = index;
+            right = index-1;
         }
         else{
             return -1;
