@@ -3,9 +3,9 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Integer right = opportunities.size();
     while(left<right){
         Integer index = (right-left);
-        Integer index = (index/2);
+        index = Decimal..intValue()(index/2);
         Opportunity o = opportunities.get(index);
-        Integer value =  o.amount;
+        Integer value =  Integer.valueOf(o.amount);
         if(value == target){
             return index;
         }
