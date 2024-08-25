@@ -1,0 +1,25 @@
+public Boolean isValid(String s){
+    //code here 
+    List<String> stack = new List<String>();
+    Map<String, String> trans = new  Map<String, String>();
+    trans.put(')','(');
+    trans.put('(',')');
+    trans.put('{','}');
+    trans.put('}','{');
+    trans.put('[',']');
+    trans.put(']','[');
+    for(Integer i = 0; i<s.length(); i++){
+        String c = s.substring(i, i+1);
+        Integer size = stack.size()-1;
+        if(size>=0 && stack[size] == c ){
+            stack.remove(size);
+        }
+        else{
+            stack.add(trans.get(c));
+        }
+    }
+    if(stack.size()>0){
+        return false;
+    }
+    return true;
+}
