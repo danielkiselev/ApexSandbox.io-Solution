@@ -1,19 +1,17 @@
 public List<Integer> twoSum(List<Integer> nums, Integer target){
     List<Integer> res = List<Integer>();
     List<Integer> visited = new Integer [target+1];
-    For(Integer i = (nums.length()-1); i>=0; i--){
+    For(Integer i = 0; i<nums.size(); i++){
         if(nums[i]>target){
-            continue;
+            return res;
         }
-        if(visited[nums[i]] != null){
+        if(visited.get(nums[i]) != null){
+            res.add(visited.get(nums[i]));
             res.add(i);
-            res.add(visited[nums[i]]);
             return res;
         }
         Integer temp = target-nums[i];
-        if(temp>=0){
-            visited[temp] = i;
-        }
+        visited.set(temp,i);
     }
     return res;
     //code here
