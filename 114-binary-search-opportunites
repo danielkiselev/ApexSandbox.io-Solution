@@ -1,0 +1,15 @@
+public static Integer search(List<Opportunity> opportunities, Integer target){
+    for(Integer i =opportunities.size()-1; i>=0; i--){
+        Opportunity o= opportunities.get(i);
+        if(o.amount<target){
+            return -1;
+        }
+        else if(o.amount == target){
+            return i;
+        }
+        else{
+            continue;
+        }
+    }
+    // solution here
+}
