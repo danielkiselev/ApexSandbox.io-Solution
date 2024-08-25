@@ -10,10 +10,10 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
             return index;
         }
         else if(value<target){
-            left = index+1;
+            left = index-1;
         }
         else{
-            right = index;
+            right = index+1;
         }
     }
     return -1;
