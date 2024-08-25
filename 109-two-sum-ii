@@ -11,7 +11,9 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
             return res;
         }
         Integer temp = target-nums[i];
-        visited[temp] = i;
+        if(temp>=0){
+            visited[temp] = i;
+        }
     }
     return res;
     //code here
