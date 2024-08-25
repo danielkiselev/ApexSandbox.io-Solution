@@ -1,0 +1,25 @@
+public static Integer maxSubArraySum(List<Integer> nums, Integer target){
+    Integer window = nums.size() - target;//5-2 = 3
+    Integer res = null;
+    for(Integer i = 0; i<=window; i++ ){
+        Integer value = null;
+        for(Integer k = i; k<(i+target); k++){
+            if(value == null){
+                value = nums[k];
+            }
+            else{
+                value+=nums[k];
+            }
+        }
+        if(value != null){
+            if(res == null){
+                res = value;
+            }
+            else{
+                res = Math.max(value, res);
+            }
+        }
+
+    }
+//code here 
+}
