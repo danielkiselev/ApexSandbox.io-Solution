@@ -1,9 +1,9 @@
 public List<Integer> twoSum(List<Integer> nums, Integer target){
-    List<Integer> res = List<Integer>();
+    List<Integer> res = new List<Integer>();
     List<Integer> visited = new Integer [target+1];
     For(Integer i = 0; i<nums.size(); i++){
         if(nums[i]>target){
-            return res;
+            return null;
         }
         if(visited.get(nums[i]) != null){
             res.add(visited.get(nums[i]));
