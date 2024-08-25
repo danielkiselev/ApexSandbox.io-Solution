@@ -1,0 +1,4 @@
+public string countAndSay(integer N) {
+    String s = String.toString(N);
+    // code here
+}
